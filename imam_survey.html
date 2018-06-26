@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Survey from Religious Director</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="shortcut icon" href="">
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <div class="container text-center text-dark pt-1">
+          <h1 class="display-4">Survey From Religious Director</h1>
+        </div>
+        <div class="container text-center text-info pt-1">
+          <p class="lead">Please provide answers to the following questions that will help me plan programming at MCCGP</p>
+          <p class="lead">This survey is <strong>ANONYMOUS</strong></p>
+        </div>
+      </div>
+
+      <form id="religious-director-survey" method="POST" action="https://script.google.com/macros/s/AKfycbyl8RRrzaZp4vYPvRGKK9BYeSBONNQO0dhtVnTpz9GFJM-ItLM/exec">
+
+        <!-- Age -->
+        <div class="form-group">
+          <h5 class="" for="Age">1. How old are you?</h5>
+          <div id="age_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please provide your age in years (must be 13 or older)
+          </div>
+          <div class="controls">
+            <input class="w-50" type="text" id="age" name="Age" placeholder="" onkeypress="return isNumber(event)"/>
+          </div></br>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group">
+          <h5 class="">2. Gender</h5>
+          <div id="gender_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please select your gender
+          </div>
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Gender" id="gender_male" value="Male">
+                Male
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Gender" id="gender_female" value="Female">
+                Female
+              </label>
+            </div>
+          </div></br>
+        </div>
+
+        <!-- Fequency -->
+        <div class="form-group">
+          <h5 class="">3. How often do you attend MCCGP?</h5>
+          <div id="attendance_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please select appropriate response
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Attendance" id="attendance_frequently" value="Frequently">
+                Frequently
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Attendance" id="attendance_weekly" value="Weekly">
+                Once a Week
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Attendance" id="attendance_occasionally" value="Occasionally">
+                Occasionally
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Attendance" id="attendance_seldom" value="Seldom">
+                Seldom
+              </label>
+            </div>
+          </div></br>
+        </div>
+
+        <!-- Invite a friend -->
+        <div class="form-group">
+          <h5 class="">4. If there was an activity that interested you, would you invite a friend?</h5>
+          <div id="invite_friend_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please select Yes or No
+          </div>
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Invite_Friend" id="invite_yes" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Invite_Friend" id="invite_no" value="No">
+                No
+              </label>
+            </div>
+          </div></br>
+        </div>
+
+        <!-- Program day -->
+        <div class="form-group">
+          <h5 class="">5. What evenings are  the best for you to attend a program or event (weekdays, weekends, any particular day of the week)? (check all that apply)</h5>
+          <div id="program_day_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please check <strong>at least one</strong> box
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Program_Day" id="ProgDay_Monday" value="Monday">
+                Monday
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Program_Day" id="ProgDay_Tuesday" value="Tuesday">
+                Tuesday
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Program_Day" id="ProgDay_Wednesday" value="Wednesday">
+                Wednesday
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Program_Day" id="ProgDay_Thursday" value="Thursday">
+                Thursday
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Program_Day" id="ProgDay_Friday" value="Friday">
+                Friday
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Program_Day" id="ProgDay_Saturday" value="Saturday">
+                Saturday
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Program_Day" id="ProgDay_Sunday" value="Sunday">
+                 Sunday
+              </label>
+            </div>
+          </div></br>
+        </div>
+
+        <!-- Communication Preference -->
+        <div class="form-group">
+          <h5 class="">6. What is your preferred means of communication? (check all that apply)</h5>
+          <div id="comm_pref_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please check <strong>at least one</strong> box
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Comm_Pref" id="CommPref_InPerson" value="InPerson">
+                In Person
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Comm_Pref" id="CommPref_Email" value="Email">
+                Email
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Comm_Pref" id="CommPref_Text" value="Text">
+                Text
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Comm_Pref" id="CommPref_Phone" value="Phone">
+                Phone
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Comm_Pref" id="CommPref_Facebook" value="Facebook">
+                Facebook
+              </label>
+            </div>
+          </div></br>
+        </div>
+
+        <!-- Spiritual Challenge -->
+        <div class="form-group">
+          <h5 class="" for="Spiritual_Challenge">7. What do you feel are your biggest challenges to connecting with Allah and living a spiritual life?</h5>
+          <div id="spiritual_challenge_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            This question must be answered
+          </div>
+          <div class="controls">
+            <textarea class="form-control w-50" id="spiritual_challenge" rows="3" name="Spiritual_Challenge"></textarea>
+          </div></br>
+        </div>
+
+        <!-- Topics of interest-->
+        <div class="form-group">
+          <h5 class="" for="Topics_of_Interest">8. What topics and issues do you feel should be addressed in the mosque (either in Friday sermons or classes) but are not?</h5>
+          <div id="topic_interest_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            This question must be answered
+          </div>
+          <div class="controls">
+            <textarea class="form-control w-50" id="topic_of_interest" rows="3" name="Topic_Of_Interest"></textarea>
+          </div></br>
+        </div>
+
+        <!-- Overaddressed Topics -->
+        <div class="form-group">
+          <h5 class="" for="Topics_of_Interest">9. What topics and issues do you feel are <em>over-addressed</em> in the mosque?</h5>
+          <div id="overaddressed_topics_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            This question must be answered
+          </div>
+          <div class="controls">
+            <textarea class="form-control w-50" id="over_addressed_topics" rows="3" name="Overaddressed_Topics"></textarea>
+          </div></br>
+        </div>
+
+        <!-- Other Programs -->
+        <div class="form-group">
+          <h5 class="" for="Other_Programs">10. Besides classes and lectures, what other programs would you like to see at MCCGP?</h5>
+          <div id="other_programs_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            This question must be answered
+          </div>
+          <div class="controls">
+            <textarea class="form-control w-50" id="other_programs" rows="3" name="Other_Programs"></textarea>
+          </div></br>
+        </div>
+
+        <!-- Important Topics -->
+        <div class="form-group">
+          <h5 class="">11. What topics do you feel are most important and which would have the widest appeal?</h5>
+          <div id="important_topics_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please check <strong>at least one</strong> box
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Important_Topics" id="ImpTopics_Theology" value="Islamic Theology">
+                A. Islamic Theology (belief, faith)
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Important_Topics" id="ImpTopics_Seerah" value="Seerah">
+                B. Seerah (Sacred biography of Prophet Muhammad (Allah bless him and give him peace))
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Important_Topics" id="ImpTopics_Fiqh" value="Fiqh">
+                C. Fiqh (Islamic Jurisprudence - purification, prayer, fasting, interactions, etc)
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Important_Topics" id="ImpTopics_Spirituality" value="Spirituality">
+                D. Spirituality (purfication of the heart, reminders, character, ethics, etc)
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Important_Topics" id="ImpTopics_Tafseer" value="Tafseer">
+                E. Tafseer (Quranic commentary)
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Important_Topics" id="ImpTopics_Other" value="Other">
+                F. Other (specify)
+              </label>
+              <div class="form-group">
+                <div id="other_text_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+                  Please specify other topic(s)
+                </div>
+                <div class="controls">
+                  <input class="w-50" type="text" id="other_text" name="Topics_Other_Text" placeholder="" disabled>
+                </div>
+              </div>
+          </div></br>
+        </div>
+
+        <!-- Inclusive of Women -->
+        <div class="form-group">
+          <h5 class="">12. Do you feel MCCGP is inclusive of women and offers relevant religious programs for them?</h5>
+          <div id="women_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please select Yes or No and suggest topics if 'No'
+          </div>
+          <div class="form-group">
+            <div class="form-check form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Inclusive_Of_Women" id="women_yes" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Inclusive_Of_Women" id="women_no" value="No">
+                No (suggest topics below)
+              </label>
+              <div class="form-group">
+                <div id="women_other_text_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+                  Please specify other topic(s)
+                </div>
+                <div class="controls">
+                  <input class="w-50" type="text" id="women_other_text" name="Women_Other_Text" placeholder="" disabled>
+                </div>
+              </div>
+            </div>
+          </div></br>
+        </div>
+
+        <!-- Common Characteristics -->
+        <div class="form-group">
+          <h5 class="">13. Which of the following is a characteristic that you have in common with most of your friends and acquaintances? (select all that apply)</h5>
+          <div id="common_characteristics_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please check <strong>at least one</strong> box
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Common_Characteristics" id="Characteristic_Religion" value="Religion">
+                A. Religion
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Common_Characteristics" id="Characteristic_Ethinicity_Race" value="Ethinicity/Race">
+                B. Ethinicity/Race
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Common_Characteristics" id="Characteristic_Academic" value="Academic/Personal Onterests">
+                C. Academic/Personal Interests
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Common_Characteristics" id="Characteristic_Parents_Friends" value="Parents/Friends">
+                D. Parents or Friends
+              </label>
+            </div>
+          </div></br>
+        </div>
+
+        <!-- Source of Knowledge -->
+        <div class="form-group">
+          <h5 class="">14. What is your primary source of religious knowledge? (select all that apply)</h5>
+          <div id="knowledge_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please check <strong>at least one</strong> box
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Knowledge_Source" id="Knowledge_Textual" value="Textual">
+                A. Religion
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Knowledge_Source" id="Knowledge_Local" value="Local Religious Head">
+                B. Local Religious Spiritual Head
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Knowledge_Source" id="Knowledge_WellKnown" value="Well-known Religious Head">
+                C. Well-known Religious Spiritual Head
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Knowledge_Source" id="Knowledge_Family" value="Family">
+                D. Family
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Knowledge_Source" id="Knowledge_Online" value="Online/Social Media">
+                E. Online/Social Media
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Knowledge_Source" id="Knowledge_Peers" value="Peers">
+                F. Peers
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="Knowledge_Source" id="Knowledge_Other" value="Other">
+                G. Other
+              </label>
+            </div>
+          </div></br>
+        </div>
+
+        <!-- Biggest Influencers -->
+        <div class="form-group">
+          <h5 class="">15. Rank in order your biggest influencers (1 - Most, 5- Least. Select all that apply)</h5>
+          <div id="influencers_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please choose <strong>at least one</strong> option
+          </div>
+          <div id="influencers_ranking_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please choose <strong>distinct values</strong> for ranks (no two values can be the same)
+          </div>
+          <label for="Influencer_religious_leader">A. Religious Leader</label>
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Religious_Leader" id="leader_rank_1" value="1">
+                1
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Religious_Leader" id="leader_rank_2" value="2">
+                2
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Religious_Leader" id="leader_rank_3" value="3">
+                3
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Religious_Leader" id="leader_rank_4" value="4">
+                4
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Religious_Leader" id="leader_rank_5" value="5">
+                5
+              </label>
+            </div>
+          </div>
+
+          <label for="Influencer_Peer">B. Peer</label>
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Peer" id="peer_rank_1" value="1">
+                1
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Peer" id="peer_rank_2" value="2">
+                2
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Peer" id="peer_rank_3" value="3">
+                3
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Peer" id="peer_rank_4" value="4">
+                4
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Peer" id="peer_rank_5" value="5">
+                5
+              </label>
+            </div>
+          </div>
+
+          <label for="Influencer_Family_Head">C. Family Head</label>
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Family_Head" id="family_rank_1" value="1">
+                1
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Family_Head" id="family_rank_2" value="2">
+                2
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Family_Head" id="family_rank_3" value="3">
+                3
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Family_Head" id="family_rank_4" value="4">
+                4
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Family_Head" id="family_rank_5" value="5">
+                5
+              </label>
+            </div>
+          </div>
+
+          <label for="Influencer_Organization">D. Organization</label>
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Organization" id="org_rank_1" value="1">
+                1
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Organization" id="org_rank_2" value="2">
+                2
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Organization" id="org_rank_3" value="3">
+                3
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Organization" id="org_rank_4" value="4">
+                4
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Organization" id="org_rank_5" value="5">
+                5
+              </label>
+            </div>
+          </div>
+
+          <label for="Influencer_Colleague">E. Colleague</label>
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Colleague" id="colleague_rank_1" value="1">
+                1
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Colleague" id="colleague_rank_2" value="2">
+                2
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Colleague" id="colleague_rank_3" value="3">
+                3
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Colleague" id="colleague_rank_4" value="4">
+                4
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Influencer_Colleague" id="colleague_rank_5" value="5">
+                5
+              </label>
+            </div>
+          </div></br>
+        </div>
+
+        <div class="form-group">
+          <!-- Button -->
+          <div id="submit_alert" class="alert alert-danger alert-dismissible fade show" style="display:none" role="alert">
+            Please correct errors above before submitting again
+          </div>
+          <div class="controls">
+            <button id="submit-form" class="btn btn-submit btn-primary">Submit</button>
+          </div></br>
+        </div>
+
+      </form>
+
+    </div> <!-- container -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script data-cfasync="false" type="text/javascript" src="survey-form-submission-handler.js"></script>
+    <!-- obtain client's ip address -->
+    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+    <!-- Script URL: https://script.google.com/macros/s/AKfycbxXS_EHmWqOJngdtQsJHOE76U6R9uEr6G6ZvitIdZzV0DuCQk8/exec -->
+    <!--script>var $form = $('form#membership-application'),
+        url = 'https://script.google.com/macros/s/AKfycbxXS_EHmWqOJngdtQsJHOE76U6R9uEr6G6ZvitIdZzV0DuCQk8/exec'
+
+    $('#submit-form').on('click', function(e) {
+      e.preventDefault();
+      //alert($form.serializeObject());
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form.serializeObject()
+      }).success(
+        // do something
+      );
+    })</script-->
+  </body>
+</html>
