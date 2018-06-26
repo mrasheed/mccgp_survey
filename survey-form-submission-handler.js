@@ -52,6 +52,7 @@ function getFormData() {
   });
 
   // add form-specific values into the data
+  data.IP_Address = ip_addr;
   data.formDataNameOrder = JSON.stringify(fields);
   data.formGoogleSheetName = form.dataset.sheet || "Survey"; // default sheet name
   data.formGoogleSendEmail = form.dataset.Email || ""; // no email by default
@@ -71,199 +72,211 @@ function checkCompletion(data) {
     valid = false;
   }
 
-  if(   !document.getElementById('gender_male').checked
-     && !document.getElementById('gender_female').checked ) {
+  if(valid &&
+     !document.getElementById('gender_male').checked &&
+     !document.getElementById('gender_female').checked ) {
 
     document.getElementById('gender_alert').style.display = "block";
     valid = false;
   }
 
-  if(   !document.getElementById('attendance_frequently').checked
-     && !document.getElementById('attendance_weekly').checked
-     && !document.getElementById('attendance_occasionally').checked
-     && !document.getElementById('attendance_seldom').checked ) {
+  if(valid &&
+     !document.getElementById('attendance_frequently').checked &&
+     !document.getElementById('attendance_weekly').checked &&
+     !document.getElementById('attendance_occasionally').checked &&
+     !document.getElementById('attendance_seldom').checked ) {
 
     document.getElementById('attendance_alert').style.display = "block";
     valid = false;
   }
 
-  if(   !document.getElementById('invite_yes').checked
-     && !document.getElementById('invite_no').checked ) {
+  if(valid &&
+     !document.getElementById('invite_yes').checked &&
+     !document.getElementById('invite_no').checked ) {
 
     document.getElementById('invite_friend_alert').style.display = "block";
     valid = false;
   }
 
-  if(   !document.getElementById('ProgDay_Monday').checked
-     && !document.getElementById('ProgDay_Tuesday').checked
-     && !document.getElementById('ProgDay_Wednesday').checked
-     && !document.getElementById('ProgDay_Thursday').checked
-     && !document.getElementById('ProgDay_Friday').checked
-     && !document.getElementById('ProgDay_Saturday').checked
-     && !document.getElementById('ProgDay_Sunday').checked ) {
+  if(valid &&
+     !document.getElementById('ProgDay_Monday').checked &&
+     !document.getElementById('ProgDay_Tuesday').checked &&
+     !document.getElementById('ProgDay_Wednesday').checked &&
+     !document.getElementById('ProgDay_Thursday').checked &&
+     !document.getElementById('ProgDay_Friday').checked &&
+     !document.getElementById('ProgDay_Saturday').checked &&
+     !document.getElementById('ProgDay_Sunday').checked ) {
 
     document.getElementById('program_day_alert').style.display = "block";
     valid = false;
   }
 
-  if(   !document.getElementById('CommPref_InPerson').checked
-     && !document.getElementById('CommPref_Email').checked
-     && !document.getElementById('CommPref_Text').checked
-     && !document.getElementById('CommPref_Phone').checked
-     && !document.getElementById('CommPref_Facebook').checked ) {
+  if(valid &&
+     !document.getElementById('CommPref_InPerson').checked &&
+     !document.getElementById('CommPref_Email').checked &&
+     !document.getElementById('CommPref_Text').checked &&
+     !document.getElementById('CommPref_Phone').checked &&
+     !document.getElementById('CommPref_Facebook').checked ) {
 
     document.getElementById('comm_pref_alert').style.display = "block";
     valid = false;
   }
 
-  if(document.getElementById('spiritual_challenge').value === "") {
+  if(valid && document.getElementById('spiritual_challenge').value === "") {
 
     document.getElementById('spiritual_challenge').className += " border border-danger";
     document.getElementById('spiritual_challenge_alert').style.display = "block";
     valid = false;
   }
 
-  if(document.getElementById('topic_of_interest').value === "") {
+  if(valid && document.getElementById('topic_of_interest').value === "") {
 
     document.getElementById('topic_of_interest').className += " border border-danger";
     document.getElementById('topic_interest_alert').style.display = "block";
     valid = false;
   }
 
-  if(document.getElementById('over_addressed_topics').value === "") {
+  if(valid && document.getElementById('over_addressed_topics').value === "") {
 
     document.getElementById('over_addressed_topics').className += " border border-danger";
     document.getElementById('overaddressed_topics_alert').style.display = "block";
     valid = false;
   }
 
-  if(document.getElementById('other_programs').value === "") {
+  if(valid && document.getElementById('other_programs').value === "") {
 
     document.getElementById('other_programs').className += " border border-danger";
     document.getElementById('other_programs_alert').style.display = "block";
     valid = false;
   }
 
-  if(   !document.getElementById('ImpTopics_Theology').checked
-     && !document.getElementById('ImpTopics_Seerah').checked
-     && !document.getElementById('ImpTopics_Fiqh').checked
-     && !document.getElementById('ImpTopics_Spirituality').checked
-     && !document.getElementById('ImpTopics_Tafseer').checked
-     && !document.getElementById('ImpTopics_Other').checked ) {
+  if(valid &&
+     !document.getElementById('ImpTopics_Theology').checked &&
+     !document.getElementById('ImpTopics_Seerah').checked &&
+     !document.getElementById('ImpTopics_Fiqh').checked &&
+     !document.getElementById('ImpTopics_Spirituality').checked &&
+     !document.getElementById('ImpTopics_Tafseer').checked &&
+     !document.getElementById('ImpTopics_Other').checked ) {
 
     document.getElementById('important_topics_alert').style.display = "block";
     valid = false;
   }
 
-  if(   document.getElementById('ImpTopics_Other').checked
-     && document.getElementById('other_text').value === "") {
+  if(valid &&
+     document.getElementById('ImpTopics_Other').checked &&
+     document.getElementById('other_text').value === "") {
 
     document.getElementById('other_text_alert').style.display = "block";
     valid = false;
   }
 
-  if(   !document.getElementById('women_yes').checked
-     && !document.getElementById('women_no').checked ) {
+  if(valid &&
+     !document.getElementById('women_yes').checked &&
+     !document.getElementById('women_no').checked ) {
 
     document.getElementById('women_alert').style.display = "block";
     valid = false;
   }
 
-  if(   document.getElementById('women_no').checked
-     && document.getElementById('women_other_text').value === "") {
+  if(valid &&
+     document.getElementById('women_no').checked &&
+     document.getElementById('women_other_text').value === "") {
 
     document.getElementById('women_other_text_alert').style.display = "block";
     valid = false;
   }
 
-  if(   !document.getElementById('Characteristic_Religion').checked
-     && !document.getElementById('Characteristic_Ethinicity_Race').checked
-     && !document.getElementById('Characteristic_Academic').checked
-     && !document.getElementById('Characteristic_Parents_Friends').checked ) {
+  if(valid &&
+     !document.getElementById('Characteristic_Religion').checked &&
+     !document.getElementById('Characteristic_Ethinicity_Race').checked &&
+     !document.getElementById('Characteristic_Academic').checked &&
+     !document.getElementById('Characteristic_Parents_Friends').checked ) {
 
     document.getElementById('common_characteristics_alert').style.display = "block";
     valid = false;
   }
 
 
-  if(   !document.getElementById('Knowledge_Textual').checked
-     && !document.getElementById('Knowledge_Local').checked
-     && !document.getElementById('Knowledge_WellKnown').checked
-     && !document.getElementById('Knowledge_Family').checked
-     && !document.getElementById('Knowledge_Online').checked
-     && !document.getElementById('Knowledge_Peers').checked
-     && !document.getElementById('Knowledge_Other').checked ) {
+  if(valid &&
+     !document.getElementById('Knowledge_Textual').checked &&
+     !document.getElementById('Knowledge_Local').checked &&
+     !document.getElementById('Knowledge_WellKnown').checked &&
+     !document.getElementById('Knowledge_Family').checked &&
+     !document.getElementById('Knowledge_Online').checked &&
+     !document.getElementById('Knowledge_Peers').checked &&
+     !document.getElementById('Knowledge_Other').checked ) {
 
     document.getElementById('knowledge_alert').style.display = "block";
     valid = false;
   }
 
   var leader_rank = ""
-  if(   document.getElementById('leader_rank_1').checked {
+  if(document.getElementById('leader_rank_1').checked) {
       leader_rank = document.getElementById('leader_rank_1').value;
-  } else if document.getElementById('leader_rank_2').checked {
+  } else if(document.getElementById('leader_rank_2').checked) {
       leader_rank = document.getElementById('leader_rank_2').value;
-  } else if document.getElementById('leader_rank_3').checked {
+  } else if (document.getElementById('leader_rank_3').checked) {
       leader_rank = document.getElementById('leader_rank_3').value;
-  } else if document.getElementById('leader_rank_4').checked {
+  } else if (document.getElementById('leader_rank_4').checked) {
       leader_rank = document.getElementById('leader_rank_4').value;
-  } else if document.getElementById('leader_rank_5').checked {
+  } else if (document.getElementById('leader_rank_5').checked) {
       leader_rank = document.getElementById('leader_rank_5').value;
   }
 
   var peer_rank = ""
-  if(   document.getElementById('peer_rank_1').checked {
+  if(document.getElementById('peer_rank_1').checked) {
       peer_rank = document.getElementById('peer_rank_1').value;
-  } else if document.getElementById('peer_rank_2').checked {
+  } else if (document.getElementById('peer_rank_2').checked) {
       peer_rank = document.getElementById('peer_rank_2').value;
-  } else if document.getElementById('peer_rank_3').checked {
+  } else if (document.getElementById('peer_rank_3').checked) {
       peer_rank = document.getElementById('peer_rank_3').value;
-  } else if document.getElementById('peer_rank_4').checked {
+  } else if (document.getElementById('peer_rank_4').checked) {
       peer_rank = document.getElementById('peer_rank_4').value;
-  } else if document.getElementById('peer_rank_5').checked {
+  } else if (document.getElementById('peer_rank_5').checked) {
       peer_rank = document.getElementById('peer_rank_5').value;
   }
 
   var family_rank = ""
-  if(   document.getElementById('family_rank_1').checked {
+  if(document.getElementById('family_rank_1').checked) {
       family_rank = document.getElementById('family_rank_1').value;
-  } else if document.getElementById('family_rank_2').checked {
+  } else if (document.getElementById('family_rank_2').checked) {
       family_rank = document.getElementById('family_rank_2').value;
-  } else if document.getElementById('family_rank_3').checked {
+  } else if (document.getElementById('family_rank_3').checked) {
       family_rank = document.getElementById('family_rank_3').value;
-  } else if document.getElementById('family_rank_4').checked {
+  } else if (document.getElementById('family_rank_4').checked) {
       family_rank = document.getElementById('family_rank_4').value;
-  } else if document.getElementById('family_rank_5').checked {
+  } else if (document.getElementById('family_rank_5').checked) {
       family_rank = document.getElementById('family_rank_5').value;
   }
 
   var org_rank = ""
-  if(   document.getElementById('org_rank_1').checked {
+  if(document.getElementById('org_rank_1').checked) {
       org_rank = document.getElementById('org_rank_1').value;
-  } else if document.getElementById('org_rank_2').checked {
+  } else if (document.getElementById('org_rank_2').checked) {
       org_rank = document.getElementById('org_rank_2').value;
-  } else if document.getElementById('org_rank_3').checked {
+  } else if (document.getElementById('org_rank_3').checked) {
       org_rank = document.getElementById('org_rank_3').value;
-  } else if document.getElementById('org_rank_4').checked {
+  } else if (document.getElementById('org_rank_4').checked) {
       org_rank = document.getElementById('org_rank_4').value;
-  } else if document.getElementById('org_rank_5').checked {
+  } else if (document.getElementById('org_rank_5').checked) {
       org_rank = document.getElementById('org_rank_5').value;
   }
 
   var colleague_rank = ""
-  if(   document.getElementById('colleague_rank_1').checked {
+  if(document.getElementById('colleague_rank_1').checked) {
       colleague_rank = document.getElementById('colleague_rank_1').value;
-  } else if document.getElementById('colleague_rank_2').checked {
+  } else if (document.getElementById('colleague_rank_2').checked) {
       colleague_rank = document.getElementById('colleague_rank_2').value;
-  } else if document.getElementById('colleague_rank_3').checked {
+  } else if (document.getElementById('colleague_rank_3').checked) {
       colleague_rank = document.getElementById('colleague_rank_3').value;
-  } else if document.getElementById('colleague_rank_4').checked {
+  } else if (document.getElementById('colleague_rank_4').checked) {
       colleague_rank = document.getElementById('colleague_rank_4').value;
-  } else if document.getElementById('colleague_rank_5').checked {
+  } else if (document.getElementById('colleague_rank_5').checked) {
       colleague_rank = document.getElementById('colleague_rank_5').value;
   }
 
-  if(leader_rank === "" &&
+  if(valid &&
+     leader_rank === "" &&
      peer_rank === "" &&
      family_rank === "" &&
      org_rank === "" &&
@@ -273,14 +286,41 @@ function checkCompletion(data) {
     valid = false;
   }
 
-  if(leader_rank ===)
+  if(valid && leader_rank !== "" && (leader_rank === peer_rank ||
+                                     leader_rank === family_rank ||
+                                     leader_rank === org_rank ||
+                                     leader_rank === colleague_rank)) {
+
+    document.getElementById('influencers_ranking_alert').style.display = "block";
+    valid = false;
+  }
+
+  if(valid && peer_rank !== "" && (peer_rank === family_rank ||
+                                   peer_rank === org_rank ||
+                                   peer_rank === colleague_rank)) {
+
+    document.getElementById('influencers_ranking_alert').style.display = "block";
+    valid = false;
+  }
+
+  if(valid && family_rank !== "" && (family_rank === org_rank ||
+                                     family_rank === colleague_rank)) {
+
+    document.getElementById('influencers_ranking_alert').style.display = "block";
+    valid = false;
+  }
+
+  if(valid && org_rank !== "" && org_rank === colleague_rank) {
+
+    document.getElementById('influencers_ranking_alert').style.display = "block";
+    valid = false;
+  }
 
   if(!valid) {
     document.getElementById('submit_alert').style.display = "block";
-    return false;
   }
 
-  return true;
+  return valid;
 }
 
 // Handles form submit withtout any jquery. This is the main handler called
@@ -308,7 +348,7 @@ function handleFormSubmit(event) {
   xhr.onreadystatechange = function() {
       console.log( xhr.status, xhr.statusText )
       console.log(xhr.responseText);
-      document.location.replace('http://www.mccgp.org/survey-submitted.html');
+      //document.location.replace('http://www.mccgp.org/survey-submitted.html');
       return;
   };
 
@@ -333,8 +373,8 @@ document.addEventListener('DOMContentLoaded', loaded, false);
 
 // Age
 document.getElementById("age").addEventListener("keypress", function() {
-  document.getElementById('age_alert').classList.remove("border");
-  document.getElementById('age_alert').classList.remove("border-danger");
+  document.getElementById('age').classList.remove("border");
+  document.getElementById('age').classList.remove("border-danger");
   document.getElementById("age_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
@@ -431,32 +471,32 @@ document.getElementById("CommPref_Facebook").addEventListener("click", function(
 
 // Biggest spiritual challenge
 document.getElementById("spiritual_challenge").addEventListener("keypress", function() {
-  document.getElementById('spiritual_challenge_alert').classList.remove("border");
-  document.getElementById('spiritual_challenge_alert').classList.remove("border-danger");
+  document.getElementById('spiritual_challenge').classList.remove("border");
+  document.getElementById('spiritual_challenge').classList.remove("border-danger");
   document.getElementById("spiritual_challenge_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 
 // topics and issues
 document.getElementById("topic_of_interest").addEventListener("keypress", function() {
-  document.getElementById('topic_interest_alert').classList.remove("border");
-  document.getElementById('topic_interest_alert').classList.remove("border-danger");
+  document.getElementById('topic_of_interest').classList.remove("border");
+  document.getElementById('topic_of_interest').classList.remove("border-danger");
   document.getElementById("topic_interest_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 
 // over-addressed topics
 document.getElementById("over_addressed_topics").addEventListener("keypress", function() {
-  document.getElementById('overaddressed_topics_alert').classList.remove("border");
-  document.getElementById('overaddressed_topics_alert').classList.remove("border-danger");
+  document.getElementById('over_addressed_topics').classList.remove("border");
+  document.getElementById('over_addressed_topics').classList.remove("border-danger");
   document.getElementById("overaddressed_topics_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 
 // Other programs
 document.getElementById("other_programs").addEventListener("keypress", function() {
-  document.getElementById('other_programs_alert').classList.remove("border");
-  document.getElementById('other_programs_alert').classList.remove("border-danger");
+  document.getElementById('other_programs').classList.remove("border");
+  document.getElementById('other_programs').classList.remove("border-danger");
   document.getElementById("other_programs_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
@@ -500,6 +540,10 @@ document.getElementById("ImpTopics_Other").addEventListener("click", function() 
 document.getElementById("women_yes").addEventListener("click", function() {
   document.getElementById("women_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
+
+  // Enable the input text field
+  document.getElementById("women_other_text").value = '';
+  document.getElementById("women_other_text").disabled = true;
 });
 document.getElementById("women_no").addEventListener("click", function() {
   document.getElementById("women_alert").style.display = "none";
@@ -508,11 +552,7 @@ document.getElementById("women_no").addEventListener("click", function() {
 
   // Enable the input text field
   document.getElementById("women_other_text").value = '';
-  if(document.getElementById("ImpTopics_Other").checked) {
-      document.getElementById("women_other_text").disabled = false;
-  } else {
-      document.getElementById("women_other_text").disabled = true;
-  }
+  document.getElementById("women_other_text").disabled = false;
 });
 
 // Common Characteristics
@@ -566,110 +606,135 @@ document.getElementById("Knowledge_Other").addEventListener("click", function() 
 // Religious leader
 document.getElementById("leader_rank_1").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("leader_rank_2").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("leader_rank_3").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("leader_rank_4").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("leader_rank_5").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 
 // Peer
 document.getElementById("peer_rank_1").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("peer_rank_2").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("peer_rank_3").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("peer_rank_4").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("peer_rank_5").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 
 // Family
 document.getElementById("family_rank_1").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("family_rank_2").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("family_rank_3").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("family_rank_4").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("family_rank_5").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 
 // Organization
 document.getElementById("org_rank_1").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("org_rank_2").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("org_rank_3").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("org_rank_4").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("org_rank_5").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 
 // Colleague
 document.getElementById("colleague_rank_1").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("colleague_rank_2").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("colleague_rank_3").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("colleague_rank_4").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 document.getElementById("colleague_rank_5").addEventListener("click", function() {
   document.getElementById("influencers_alert").style.display = "none";
+  document.getElementById("influencers_ranking_alert").style.display = "none";
   document.getElementById('submit_alert').style.display = "none";
 });
 
