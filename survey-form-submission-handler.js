@@ -346,10 +346,22 @@ function handleFormSubmit(event) {
   xhr.open('POST', url);
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   xhr.onreadystatechange = function() {
+    if(xhr.readyState === 4 && xhr.status === 200) {
       console.log( xhr.status, xhr.statusText )
       console.log(xhr.responseText);
-      //document.location.replace('http://www.mccgp.org/survey-submitted.html');
-      return;
+
+      // Parse the response text and look for "result":"error"
+      var result = JSON.parse(xhr.responseText);
+      if(result['result'] === 'success') {
+        // Display the survey submitted page
+        document.location.replace('http://www.mccgp.org/survey-submitted.html');
+      } else {
+        // Display the error page if error was returned
+        document.location.replace('http://www.mccgp.org/survey-already-submitted.html');
+      }
+
+    }
+    return;
   };
 
   // url encode form data for sending as post data
@@ -535,6 +547,10 @@ document.getElementById("ImpTopics_Other").addEventListener("click", function() 
       document.getElementById("other_text").disabled = true;
   }
 });
+document.getElementById("other_text").addEventListener("keypress", function() {
+  document.getElementById("other_text_alert").style.display = "none";
+  document.getElementById('submit_alert').style.display = "none";
+});
 
 // Inclusive of women
 document.getElementById("women_yes").addEventListener("click", function() {
@@ -553,6 +569,10 @@ document.getElementById("women_no").addEventListener("click", function() {
   // Enable the input text field
   document.getElementById("women_other_text").value = '';
   document.getElementById("women_other_text").disabled = false;
+});
+document.getElementById("women_other_text").addEventListener("keypress", function() {
+  document.getElementById("women_other_text_alert").style.display = "none";
+  document.getElementById('submit_alert').style.display = "none";
 });
 
 // Common Characteristics
