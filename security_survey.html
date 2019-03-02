@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Safety and Security Survey</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="shortcut icon" href="">
+
+  </head>
+  <body>
+    <div class="container bg-light px-4">
+      <div class="container text-dark">
+        <h1 class="display-5 text-center font-weight-light">Safety and Security Survey</h1>
+        <p class="">
+           The security landscape for minorities in the United States has been
+           on a gradual decline for the past several years. A slew of surveys
+           and polls have indicated that attacks on religious centers in the
+           United States have gone up. Recently, the attack on the Tree of Life
+           Synagogue in our own community has left many of us shocked, hurt and
+           worried for our own safety and security. It has also led us to a
+           realization that it is imperative to maintain a certain level of
+           security in our center.
+        </p>
+        <p class="">
+           In the past couple of months, the Executive Council has constituted
+           a security committee with the goal of assessing the safety and
+           security needs of our center. The committee is looking at a wide
+           range of measures to address those needs, including installation of
+           high resolution surveillance equipment, controlling access through
+           the main doors, bolstering windows and other potential entrance
+           points, presence of armed security during various activities and
+           events, and other infrastructure upgrades. We are consulting with
+           the Monroeville police and other security companies and agencies, to
+           help us make informed decisions in this regard.
+        </p>
+        <div class="bg-dark text-white p-2">
+           <h6>As an example, based on random polling of a few community members,
+           we hired a security company on a trial basis for a month. The main
+           goal was to learn from the experience and evaluate feasibility.
+         </h6></div>
+         <p class="">
+           We believe it is extremely important to have your input in this
+           matter. Therefore, we are floating this survey in the hope that we
+           will hear from you. Please take time to answer the following
+           questions and provide comments as and when necessary. Your feedback
+           will shape our response and measures and will help us serve you
+           better.
+         </p>
+         <p class="">
+           When you answer the questions, please think about your experience at
+           the center. Think about various times and events like Jumu’a, Family
+           Nights, Sunday School, Ramadan, Eids, when you or your loved ones
+           are at the center.
+         </p>
+         <br/>
+      </div>
+      <form id="security-survey" method="POST" action="https://script.google.com/macros/s/AKfycbx0r3DTLX5cvCNgKanEuC9qYBScaGGG4j8c2Rz287epOWSBIA0a/exec">
+
+        <div class="bg-info container text-light pl-2 py-1 mx-0">
+          <h3>Infrastructure</h3>
+        </div>
+        <br/>
+        <!-- Gate Question -->
+        <div class="form-group">
+          <p class="mb-1">Do we need to have a gate at the entrance of premises? To help you
+            visualize, this gate will be like an entrance to a parking lot or
+            parking garage to be activated with a badge-wave. It will be open
+            for Juma, Sunday School and during major events, but locked
+            otherwise. When locked, only the person carrying the badge will
+            have access to the center’s premises.</p>
+          <div id="gate_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please provide answer to this question
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Gate" id="gate_yes" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Gate" id="gate_no" value="No">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Window Glass Question -->
+        <div class="form-group">
+          <p class="mb-1 mt-5">Do you recommend all the glass doors and glass windows around the
+            social hall be bulletproof and shatterproof?</p>
+          <div id="window_glass_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please provide answer to this question
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Window_Glass" id="window_glass_yes" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Window_Glass" id="window_glass_no" value="No">
+                No
+              </label>
+            </div>
+          </div></br>
+        </div>
+
+        <div class="bg-info container text-light pl-2 py-1 mx-0">
+          <h3>Building Access</h3>
+        </div>
+        <br/>
+        <!-- Main Door Question -->
+        <div class="form-group">
+          <p class="m-0">Do you recommend using only one main door for the entrance for
+            everyone and lock the rest of the doors at <strong>all times</strong>?</p>
+          <p class="">
+            <small><mark>Note that only access from outside can be locked. Due to fire code
+            requirements, exiting out of doors would still be permitted</mark></small></p>
+          <div id="main_door_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please provide answer to this question
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Main_Door" id="main_door_yes" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Main_Door" id="main_door_no" value="No">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badge Access Question -->
+        <div class="form-group">
+          <p class="mb-1 mt-5">Do you recommend a badged entry system for access?</p>
+          <div id="badge_access_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please provide answer to this question
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Badge_Access" id="badge_access_yes" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Badge_Access" id="badge_access_no" value="No">
+                No
+              </label>
+            </div>
+          </div></br>
+        </div>
+
+        <div class="bg-info container text-light pl-2 py-1 mx-0">
+          <h3>Armed Security</h3>
+        </div>
+        <br/>
+        <!-- Security Guard Question -->
+        <div class="form-group">
+          <p class="mb-1">Do you recommend having armed security for all events at the center?</p>
+          <div id="security_guard_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please provide answer to this question
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Guard" id="security_guard_yes" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Guard" id="security_guard_no" value="No">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security Guard Approach Question -->
+        <div class="form-group">
+          <p class="mb-1 mt-5">Do you think having a guard is the right approach for increasing security at the center?</p>
+          <div id="security_guard_approach_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please provide answer to this question
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Guard_Approach" id="security_guard_approach_yes" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Guard_Approach" id="security_guard_approach_no" value="No">
+                No
+              </label>
+            </div>
+          </div></br>
+        </div>
+
+        <div class="bg-info container text-light pl-2 py-1 mx-0">
+          <h3>Armed Security Trial</h3>
+        </div>
+        <br/>
+        <!-- Security trial safety Question -->
+        <div class="form-group">
+          <p class="mb-1">Did the Security guard seem conscious about safety?</p>
+          <p class="">
+            <small><mark>Please provide additional comments, if any, in the General section below</mark></small></p>
+          <div id="security_trial_safety_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please provide answer to this question
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Trial_Safety" id="security_trial_safety_yes" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Trial_Safety" id="security_trial_safety_no" value="No">
+                No
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Trial_Safety" id="security_trial_safety_not_sure" value="N/A">
+                Not Sure
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security trial diligent Question -->
+        <div class="form-group">
+          <p class="mb-1 mt-5">Was the security guard observant and diligent?</p>
+          <p class="">
+            <small><mark>Please provide additional comments, if any, in the General section below</mark></small></p>
+          <div id="security_trial_diligent_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please provide answer to this question
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Trial_Diligent" id="security_trial_diligent_yes" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Trial_Diligent" id="security_trial_diligent_no" value="No">
+                No
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Trial_Diligent" id="security_trial_diligent_not_sure" value="N/A">
+                Not Sure
+              </label>
+            </div>
+          </div></br>
+        </div>
+
+        <!-- Security trial professional Question -->
+        <div class="form-group">
+          <p class="mb-1">Was the security guard professional in his
+            interactions with the community?</p>
+            <p class="">
+              <small><mark>Please provide additional comments, if any, in the General section below</mark></small></p>
+          <div id="security_trial_professional_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please provide answer to this question
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Trial_Professional" id="security_trial_professional_yes" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Trial_Professional" id="security_trial_professional_no" value="No">
+                No
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Trial_Professional" id="security_trial_professional_not_sure" value="N/A">
+                Not Sure
+              </label>
+            </div>
+          </div></br>
+        </div>
+
+        <div class="bg-info container text-light pl-2 py-1 mx-0">
+          <h3>Volunteers</h3>
+        </div>
+        <br/>
+        <!-- Security Committee Question -->
+        <div class="form-group">
+          <p class="mb-1">Do you recommend putting in place a permanent security
+            committee? <mark>This committee will keep a check on current measures and
+            evaluate and recommend future improvements.</mark></p>
+          <div id="security_committee_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please provide answer to this question
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Committee" id="security_committee_yes" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Committee" id="security_committee_no" value="No">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security Team Question -->
+        <div class="form-group">
+          <p class="mb-1 mt-5">Do you recommend having volunteer security teams
+            for various events and activities? <mark>This is one of the key measures
+            recommended by security experts. These teams will keep an eye out
+            for strangers and any unusual occurrences during these events.</mark></p>
+          <div id="security_team_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+            Please provide answer to this question
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Team" id="security_team_yes" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="Security_Team" id="security_team_no" value="No">
+                No
+              </label>
+            </div>
+          </div>
+
+          <!-- Security Team Volunteer Question -->
+          <div class="form-group">
+            <p class="mb-1 mt-5">Would you volunteer for any of these committees
+              and teams? <mark>Before answering, please consider that these
+                measures can only be effective if there is more participation
+                from the community members. This is our collective responsibility.</mark></p>
+            <div id="security_team_volunteer_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+              Please provide answer to this question
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="Security_Team_Volunteer" id="security_team_volunteer_yes" value="Yes">
+                  Yes
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="Security_Team_Volunteer" id="security_team_volunteer_no" value="No">
+                  No
+                </label>
+              </div>
+            </div>
+
+            <!-- Security Drill Question -->
+            <div class="form-group">
+            <p class="mb-1 mt-5">Do you recommend training and drills for community members?</p>
+            <div id="security_drill_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+              Please provide answer to this question
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="Security_Drill" id="security_drill_yes" value="Yes">
+                  Yes
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="Security_Drill" id="security_drill_no" value="No">
+                  No
+                </label>
+              </div>
+            </div></br>
+        </div>
+
+        <div class="bg-info container text-light pl-2 py-1 mx-0">
+          <h3>General</h3>
+        </div>
+        <br/>
+        <!--Comments and suggestions -->
+        <div class="form-group">
+          <p class="lead"><strong>We intended the survey to be
+            short - to encourage more participation. If you have a point that
+            you think was not addressed in the questions above, feel free to
+            let us know here. You can also use this field to tell us about your
+            experience or observations about the measures that are already in
+            place, have been tried or should be implemented.</strong></p>
+          <div class="controls">
+            <textarea class="form-control w-75" id="comments" rows="3" name="Comments"></textarea>
+          </div></br>
+        </div>
+
+        <div class="form-group">
+          <!-- Button -->
+          <div id="submit_alert" class="alert alert-danger alert-dismissible fade show" style="display:none" role="alert">
+            Please correct errors above before submitting again
+          </div>
+          <div class="controls">
+            <button id="submit-form" class="btn btn-submit btn-primary">Submit</button>
+          </div></br>
+        </div>
+
+      </form>
+
+    </div> <!-- container -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script data-cfasync="false" type="text/javascript" src="security_survey_script.js"></script>
+    <!-- obtain client's ip address -->
+    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+  </body>
+</html>
