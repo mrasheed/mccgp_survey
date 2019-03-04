@@ -424,6 +424,11 @@
           </div></br>
         </div>
 
+        <div id="captcha_missing_alert" class="alert alert-warning alert-dismissible fade show" style="display:none" role="alert">
+          Please prove that you are not a Bot by clicking this check box
+        </div>
+        <div class="g-recaptcha" data-sitekey="6LecMZUUAAAAAI_YiGgyBcVkXaJeUFbwLTSa2IhF" data-theme="dark"></div><br/>
+
         <div class="form-group">
           <!-- Button -->
           <div id="submit_alert" class="alert alert-danger alert-dismissible fade show" style="display:none" role="alert">
@@ -444,6 +449,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script data-cfasync="false" type="text/javascript" src="security_survey_script.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- obtain client's ip address -->
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
   </body>

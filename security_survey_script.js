@@ -53,6 +53,7 @@ function getFormData() {
 
   // add form-specific values into the data
   data.IP_Address = ip_addr;
+  data.captcha = grecaptcha.getResponse().trim();
   data.formDataNameOrder = JSON.stringify(fields);
   data.formGoogleSheetName = form.dataset.sheet || "Survey"; // default sheet name
   data.formGoogleSendEmail = form.dataset.Email || ""; // no email by default
@@ -194,6 +195,7 @@ function handleFormSubmit(event) {
 
   // Disable the submit button to prevent the user from submitting the form
   // more than one time.
+  document.getElementById('captcha_missing_alert').style.display = "none";
   document.getElementById('submit-form').disabled = true;
 
   var url = event.target.action;
@@ -210,11 +212,18 @@ function handleFormSubmit(event) {
       if(result['result'] === 'success') {
         // Display the survey submitted page
         document.location.replace('http://www.mccgp.org/survey-submitted.html');
-      } else {
-        // Display the error page if error was returned
+      } else if (result['result'] === 'missing_captcha') {
+        // Display the error message that the captcha is missing
+        document.getElementById('captcha_missing_alert').style.display = "block";
+        document.getElementById('submit-form').disabled = false;
+      } else if (result['result'] === 'captcha_failed') {
+        // Display the error that the captcha failed validation
+        document.location.replace('http://www.mccgp.org/survey-failure.html');
+      }
+      else {
+        // Display the already submitted response
         document.location.replace('http://www.mccgp.org/survey-already-submitted.html');
       }
-
     }
     return;
   };
